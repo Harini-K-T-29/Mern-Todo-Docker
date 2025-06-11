@@ -7,7 +7,11 @@ import { connectDB } from "./lib/db.js";
 dotenv.config();
 import todoRoutes from "./routes/todoRoutes.js";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 app.use("/api/v1/todos", todoRoutes);
